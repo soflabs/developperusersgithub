@@ -105,10 +105,11 @@ if (isLike) {
   render() {
     
     var cardpush = [
-      {name : "Le New-yorker", desc : "Le Amberger", img: "./Assets/img/bookjs.jpg"},
-      {name : "Le Classic", desc : "Le Amberger", img: "./Assets/img/bookjs2.jpg"},
-      {name : "so javascript", desc : "Le Amberger", img: "./Assets/img/bookjs3.jpg"},
-      {name : "Le New-code js ", desc : "Le Amberger", img: "./Assets/img/bookjs.jpg"},
+      {name : "Eloquent JavaScript", desc : "Marijn Haverbeke", img: "./Assets/img/bookjs.jpg"},
+      {name : "JavaScript: The Good Parts", desc : "Douglas Crockford", img: "./Assets/img/bookjs2.jpg"},
+      {name : "Up & Going", desc : "Kyle Simpson", img: "./Assets/img/bookjs3.jpg"},
+      {name : "Learn JavaScript & jQuery ", desc : "Jon Duckett", img: "./Assets/img/javascript-and-jquery-book.png"},
+      {name : "Learn JavaScript VISUALLY ", desc : " Ivelin Demirov", img: "./Assets/img/Learn-JavaScript-VISUALLY.jpg"},
 
     ];
     var booksList = cardpush.map((book, i) => {
