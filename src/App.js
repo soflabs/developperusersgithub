@@ -121,7 +121,7 @@ class App extends Component {
           bookName={book.login}
           bookDesc={book.location}
           bookImg={book.avatar_url}
-          repositorie={book.repos_url}
+          repositorie={book.html_url}
           displayOnlyLike={this.state.viewOnlyLike}
           handleClickParent={this.handleClick}
         />
@@ -142,7 +142,7 @@ class App extends Component {
         <Nav>
           <NavItem>
             <NavLink href="#">
-              <img src="./Assets/img/books.png" style={{ width: 50 }} />
+              <img src="./Assets/img/books.svg" style={{ width: 50 }} />
             </NavLink>
           </NavItem>
 
@@ -157,7 +157,7 @@ class App extends Component {
           </NavItem>
           <NavItem>
             <NavLink href="#" onClick={this.handleClickLikeOn} style={{ color: "#FFFFFF" }} >
-              My Books
+              My Dev
             </NavLink>
           </NavItem>
           <NavItem>
@@ -167,7 +167,7 @@ class App extends Component {
               color="secondary"
             >
               {this.state.bookCount}
-              {this.state.bookCount > 1 ? "Books" : "Book"}
+              {this.state.bookCount > 1 ? "Devs" : "Dev"}
             </Button>
             <Popover
               placement="bottom"
@@ -175,7 +175,7 @@ class App extends Component {
               target="Popover1"
               toggle={this.togglePopOver}
             >
-              <PopoverHeader>Derniers Livres</PopoverHeader>
+              <PopoverHeader>last Dev</PopoverHeader>
               <PopoverBody>{booksLast}</PopoverBody>
             </Popover>
           </NavItem>
