@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Col, Card, CardImg, CardText, CardBody, CardTitle } from "reactstrap";
+import { Col, Card, CardImg, CardText, CardBody, CardTitle, Button } from "reactstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faThumbsUp } from "@fortawesome/free-solid-svg-icons";
 import "bootstrap/dist/css/bootstrap.css";
@@ -64,6 +64,7 @@ class Books extends Component {
                  <CardText>
                   {this.props.bookDesc}
                  </CardText>
+                 <Button src={this.props.repositorie}> Reposeterie </Button>
                </CardBody>
              </Card>
            </div>

@@ -28,7 +28,8 @@ class App extends Component {
       viewOnlyLike: false,
       bookSelected: null,
       bookCount: 0,
-      bookNameList: []
+      bookNameList: [],
+      cardpush: []
     };
   }
 
@@ -86,43 +87,41 @@ class App extends Component {
     }
   }
 
+
+
+   data = async () => {
+  
+    var rawResponse = await fetch('https://api.github.com/users');
+    var response =  await rawResponse.json();
+    console.log(response);
+    this.setState({cardpush: response})
+    
+ 
+  }
+
+  async componentDidMount(){
+  
+  await this.data()
+}
+
+
+
+ 
+
   render() {
-    var cardpush = [
-      {
-        name: "Eloquent JavaScript",
-        desc: "Marijn Haverbeke",
-        img: "./Assets/img/bookjs.jpg"
-      },
-      {
-        name: "JavaScript: The Good Parts",
-        desc: "Douglas Crockford",
-        img: "./Assets/img/bookjs2.jpg"
-      },
-      {
-        name: "Up & Going",
-        desc: "Kyle Simpson",
-        img: "./Assets/img/bookjs3.jpg"
-      },
-      {
-        name: "Learn JavaScript & jQuery ",
-        desc: "Jon Duckett",
-        img: "./Assets/img/javascript-and-jquery-book.png"
-      },
-      {
-        name: "Learn JavaScript VISUALLY ",
-        desc: " Ivelin Demirov",
-        img: "./Assets/img/Learn-JavaScript-VISUALLY.jpg"
-      }
-    ];
-    var booksList = cardpush.map((book, i) => {
+
+
+    var booksList = this.state.cardpush.map((book, i) => {
       console.log("book===>", book);
       console.log("iiiiiiiiiiiiiii===>", i);
 
       return (
         <Books
-          bookName={book.name}
-          bookDesc={book.desc}
-          bookImg={book.img}
+          key={i}
+          bookName={book.login}
+          bookDesc={book.location}
+          bookImg={book.avatar_url}
+          repositorie={book.repos_url}
           displayOnlyLike={this.state.viewOnlyLike}
           handleClickParent={this.handleClick}
         />
