@@ -105,6 +105,10 @@ class App extends Component {
 }
 
 
+uppercaseFirstLetter(str) {
+  return str.charAt(0).toUpperCase() + str.slice(1)
+}
+
 
  
 
@@ -115,13 +119,14 @@ class App extends Component {
       console.log("book===>", book);
       console.log("iiiiiiiiiiiiiii===>", i);
 
+
       return (
         <Books
           key={i}
-          bookName={book.login}
+          bookName={this.uppercaseFirstLetter(book.login) }
           bookDesc={book.location}
           bookImg={book.avatar_url}
-          repositorie={book.html_url}
+          repository={book.html_url}
           displayOnlyLike={this.state.viewOnlyLike}
           handleClickParent={this.handleClick}
         />

@@ -64,7 +64,7 @@ class Books extends Component {
                  <CardText>
                   {this.props.bookDesc}
                  </CardText>
-                 <Button color="primary" size="sm" href={this.props.repositorie}> Reposeterie </Button>
+                 <Button color="primary" size="sm" href={this.props.repository}> Repository </Button>
                </CardBody>
              </Card>
            </div>
